@@ -1,9 +1,9 @@
 body {
   font-family: "Roboto", sans-serif;
-}
-/* ==== nav bar ==== */
-nav {
   background-color: #1e202b;
+}
+/* ========== nav bar ========== */
+nav {
   color: #fff;
 }
 .navbar-brand,
@@ -51,4 +51,72 @@ nav .nav-link:focus {
 }
 .navbar-toggler:hover {
   color: #009ad8;
+}
+
+/* ========== home ========== */
+#home {
+  background-image: url("../assets/asset\ 6.png");
+  background-repeat: no-repeat;
+  padding: 70px 0;
+  min-height: 350px;
+}
+#home form {
+  position: relative;
+  margin-bottom: 70px;
+}
+#home input {
+  background-color: #1e202b;
+  color: white;
+  border: none;
+  padding: 20px 50px 20px 20px;
+  position: relative;
+}
+#home input::placeholder {
+  color: #c1c1c1;
+}
+#home button {
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  right: 7px;
+  padding: 0 40px;
+  background-color: #009ad8;
+  color: #fff;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+}
+/* ===== forecast of weather ===== */
+#home .forecast {
+  color: white;
+  font-size: 14px;
+}
+#home .forecast .row > div {
+  background-color: #323544;
+  padding-left: 0;
+  padding-right: 0;
+}
+#home .forecast .row > div:nth-child(2) {
+  background-color: #262936;
+}
+#home .forecast .date {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+#home .forecast .weather {
+  padding: 20px;
+}
+#home .forecast .weather .degree {
+  font-size: 90px;
+  font-weight: bold;
+}
+#home .forecast .weather .status {
+  color: #009ad8;
+  margin: 20px 0;
+}
+#home .forecast .weather .info span {
+  margin-right: 15px;
+}
+#home .forecast .weather .info span img {
+  margin-right: 5px;
 }

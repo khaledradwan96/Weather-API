@@ -145,15 +145,15 @@ footer .fa-circle {
   color: #1e202b;
   transition: 0.3s;
 }
-
 footer .fa-brands {
   transition: 0.3s;
 }
-
 footer .fa-stack:hover .fa-brands {
   color: #fff;
 }
-
 footer .fa-stack:hover .fa-circle {
+  color: #009ad8;
+}
+footer p strong {
   color: #009ad8;
 }

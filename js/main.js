@@ -1,6 +1,6 @@
 const apiKey = '223aedbd1377460cafe02500242806'
 const api = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=london&days=3`
-console.log(api);
+// console.log(api);
 
 
 async function getWeather(){
@@ -11,7 +11,7 @@ async function getWeather(){
 
 
 function displayTodayData(data){
-    // console.log(data.current);
+    // console.log(data);
 
     document.getElementById("city").innerHTML = data.location.name
     document.getElementById("country").innerHTML = data.location.country
@@ -26,15 +26,14 @@ function displayTodayData(data){
 
 function displayNextData(data){
     let forcastData = data.forecast.forecastday
-    console.log(forcastData)
+    // console.log(forcastData)
 
     let cartona = ""
     for(let i=0; i<forcastData.length - 1; i++){
         cartona += 
             `<div class="col-lg-4 text-center">
-                <div class="date d-flex justify-content-between">
-                    <span>Friday</span>
-                    <span>28 june</span>
+                <div class="date">
+                    <span class="dayName"></span>
                 </div>
                 <div class="weather">
                 <img class="statusImg" src="${forcastData[i+1].day.condition.icon}">
@@ -47,10 +46,28 @@ function displayNextData(data){
     document.querySelector('.weather-container .row').innerHTML += cartona
 }
 
+function displayDate(data){
+    let date = data.forecast.forecastday
+    // console.log(date)
+
+    for(let i=0; i<date.length;i++){
+        let dayName = new Date(date[i].date).toLocaleDateString('en-us',{weekday: "long"})
+        // console.log(dayName);
+        document.querySelectorAll(".dayName")[i].innerHTML = dayName
+    }
+    let dayNum = new Date(date[0].date).getDate()
+    let dayMonth = new Date(date[0].date).toLocaleDateString('en-us',{month: "long"})
+    let dayDate = dayNum + " " + dayMonth
+    // console.log(dayDate);
+    document.getElementById("dayDate").innerHTML = dayDate
+}
+
+
 // start app
 async function startApp(){
     let weatherData = await getWeather()
     displayTodayData(weatherData)
     displayNextData(weatherData)
+    displayDate(weatherData)
 }
 startApp()

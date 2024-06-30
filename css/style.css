@@ -112,8 +112,12 @@ nav .nav-link:focus {
   padding: 20px;
 }
 #home .weather-container .weather #degree {
-  font-size: 24px;
+  font-size: 90px;
   font-weight: bold;
+}
+#home .weather-container .weather .status {
+  color: #009ad8;
+  margin: 20px 0;
 }
 #home .weather-container .weather #statusText {
   color: #009ad8;
@@ -121,18 +125,10 @@ nav .nav-link:focus {
 }
 #home .weather-container .weather .info {
   display: flex;
-  /* justify-content: space-between; */
   gap: 20px;
 }
 #home .weather-container .weather .info img {
   margin-right: 5px;
-}
-
-#home .weather-container .row > div:not(:first-of-type) .location {
-  display: none;
-}
-#home .weather-container .row > div:first-of-type #degree {
-  font-size: 90px;
 }
 
 /* ========== footer ========== */

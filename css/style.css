@@ -92,38 +92,47 @@ nav .nav-link:focus {
   margin-bottom: 70px;
 }
 /* ===== forecast of weather ===== */
-#home .forecast {
+#home .weather-container {
   color: white;
   font-size: 14px;
 }
-#home .forecast .row > div {
+#home .weather-container .row > div {
   background-color: #323544;
   padding-left: 0;
   padding-right: 0;
 }
-#home .forecast .row > div:nth-child(2) {
+#home .weather-container .row > div:nth-child(2) {
   background-color: #262936;
 }
-#home .forecast .date {
+#home .weather-container .date {
   background-color: rgba(0, 0, 0, 0.1);
   padding: 10px;
 }
-#home .forecast .weather {
+#home .weather-container .weather {
   padding: 20px;
 }
-#home .forecast .weather .degree {
-  font-size: 90px;
+#home .weather-container .weather #degree {
+  font-size: 24px;
   font-weight: bold;
 }
-#home .forecast .weather .status {
+#home .weather-container .weather #statusText {
   color: #009ad8;
   margin: 20px 0;
 }
-#home .forecast .weather .info span {
-  margin-right: 15px;
+#home .weather-container .weather .info {
+  display: flex;
+  /* justify-content: space-between; */
+  gap: 20px;
 }
-#home .forecast .weather .info span img {
+#home .weather-container .weather .info img {
   margin-right: 5px;
+}
+
+#home .weather-container .row > div:not(:first-of-type) .location {
+  display: none;
+}
+#home .weather-container .row > div:first-of-type #degree {
+  font-size: 90px;
 }
 
 /* ========== footer ========== */

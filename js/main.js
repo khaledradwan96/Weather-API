@@ -1,5 +1,5 @@
 async function getWeather(cityName){
-    const apiKey = '223aedbd1377460cafe02500242806'
+    const apiKey = "223aedbd1377460cafe02500242806"
     const api = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${cityName}&days=3`
     console.log(api);
     let response = await fetch(api)
@@ -43,6 +43,7 @@ function displayTodayData(data){
                 </div>
             </div>
         </div>`
+
     document.querySelector('.weather-container .row').innerHTML = TodayBox
 }
 

@@ -8,8 +8,6 @@ async function getWeather(cityName){
 
 
 function displayTodayData(data){
-    // console.log(data);
-
     let TodayBox = `
         <!-- Today Date -->
         <div class="col-lg-4">
@@ -48,7 +46,6 @@ function displayTodayData(data){
 
 function displayNextData(data){
     let forcastData = data.forecast.forecastday
-    // console.log(forcastData)
 
     let cartona = ""
     for(let i=0; i<forcastData.length - 1; i++){
@@ -88,12 +85,21 @@ function displayDate(data){
 
 
 // start app
-async function startApp(cityName = "cairo"){
-    let weatherData = await getWeather(cityName)
-    if(!weatherData.error){
-        displayTodayData(weatherData)
-        displayNextData(weatherData)
-        displayDate(weatherData)
+async function startApp(cityName = "cairo") {
+    try {
+        let weatherData = await getWeather(cityName);
+        if (!weatherData.error) {
+            displayTodayData(weatherData);
+            displayNextData(weatherData);
+            displayDate(weatherData);
+        } else {
+            throw new Error("City not found.");
+        }
+    } catch (error) {
+        document.querySelector('.weather-container .row').innerHTML = `
+            <div class="col-12 text-center text-danger fw-bold">
+                Error: ${error.message}
+            </div>`;
     }
 }
 startApp()
